@@ -11,29 +11,32 @@
 // let question2 = prompt('How old are you?', '118');
 // console.log(question2);
 
-let question1 = prompt('Ваш месячный доход?')
-console.log();
+let money = +prompt('Ваш месячный доход?')
+console.log(money);
 // вывести в переменную money//
 
-let question2 =
-
+// let question2 =
+let addExpenses = prompt(“Перечислите возможные расходы за рассчитываемый период через запятую”);
+console.log(addExpenses);
 //addExpenses вывести в виде массива//
 
-let question3 = comfirm('Есть ли у вас депозит в банке?');
+let deposit = comfirm('Есть ли у вас депозит в банке?');
+console.log(deposit);
+
 // save in 'deposit'
 
 // вывести в консоль money, income, deposit
 
-let question4 = ('Какие обязательные ежемесячные расходы у вас есть?');
-
+let question1 = ('Какие обязательные ежемесячные расходы у вас есть?');
+console.log(question1);
 //ask this Q twise
 
-let question5 = (“Во сколько это обойдется?”);
-
+let question2 = (“Во сколько это обойдется?”);
+console.log(question2);
 //ask this Q twise
 //              Q1 -  Q4
-let budgetMonth = ;
-console.log(budgetMonth);
+// let budgetMonth = ;
+// console.log(budgetMonth);
 
 //7/ Зная budgetMonth, посчитать за сколько месяцев будет
 // достигнута цель mission, вывести в консоль, округляя
@@ -50,25 +53,25 @@ console.log(budgetMonth);
 
 //Если budgetDay больше 800, то “Высокий уровень дохода”
 
-if budgetDay > 800
-    else “Высокий уровень дохода”
-
-//Если budgetDay больше 300 и меньше 800,
-// то сообщение “Средний уровень дохода”
-
-if budgetDay <300 and <800 “Средний уровень дохода”
-
-//Если budgetDay больше 0 и меньше 300 то в консоль
-// вывести сообщение “Низкий уровень дохода”
-
-if budgetDay <0 and <300 “Низкий уровень дохода”
-
-//Если отрицательное значение то вывести “Что то пошло не так”
-
-if budgetDay >0 “Что то пошло не так”
-
-//учесть варианты 0, 300 и 800
-
-if  = 0 =>
-if = 300 =>
-if = 800 => 
+// if budgetDay > 800
+//     else “Высокий уровень дохода”
+//
+// //Если budgetDay больше 300 и меньше 800,
+// // то сообщение “Средний уровень дохода”
+//
+// if budgetDay <300 and <800 “Средний уровень дохода”
+//
+// //Если budgetDay больше 0 и меньше 300 то в консоль
+// // вывести сообщение “Низкий уровень дохода”
+//
+// if budgetDay <0 and <300 “Низкий уровень дохода”
+//
+// //Если отрицательное значение то вывести “Что то пошло не так”
+//
+// if budgetDay >0 “Что то пошло не так”
+//
+// //учесть варианты 0, 300 и 800
+//
+// if  = 0 =>
+// if = 300 =>
+// if = 800 =>
