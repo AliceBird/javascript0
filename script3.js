@@ -11,49 +11,42 @@
 // let question2 = prompt('How old are you?', '118');
 // console.log(question2);
 
-let money = +prompt('Ваш месячный доход?')
-console.log(money);
-// вывести в переменную money//
+let money = +prompt ("Ваш месячный доход?", '2500000')
+console.log('type money: ', typeof money);
 
-// let question2 =
-let addExpenses = prompt(“Перечислите возможные расходы за рассчитываемый период через запятую”);
-console.log(addExpenses);
-//addExpenses вывести в виде массива//
+let income = 'freelance';
+console.log('type income: ', typeof income);
 
-let deposit = comfirm('Есть ли у вас депозит в банке?');
-console.log(deposit);
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Комуналка, бензин, еда..');
+console.log('type addExpenses:', typeof addExpenses);
+// //addExpenses вывести в виде массива//
+//
+let deposit = confirm('Есть ли у вас депозит в банке?');
+console.log('type deposit: ', typeof deposit);
 
-// save in 'deposit'
+let mission = 1000000;
 
-// вывести в консоль money, income, deposit
+let period = 12;
+console.log(`Период равен ${period} месяцев.
+    Цель заработать ${mission} рублей/долларов/гривен/юани`);
+console.log(addExpenses.toLocaleLowerCase().split(', '));
 
-let question1 = ('Какие обязательные ежемесячные расходы у вас есть?');
-console.log(question1);
-//ask this Q twise
+let question1 = ('Какие обязательные ежемесячные расходы у вас есть?' , 'gasoline');
+let question2 = ('Во сколько это обойдется?', '5000');
+let question3 = ('Какие обязательные ежемесячные расходы у вас есть?', 'food');
+let question4 = ('Во сколько это обойдется?', '30000');
 
-let question2 = (“Во сколько это обойдется?”);
-console.log(question2);
-//ask this Q twise
-//              Q1 -  Q4
-// let budgetMonth = ;
-// console.log(budgetMonth);
+let budgetMonth =  Number(money) - (Number(question2)) + (Number(question4));
+if (isNaN(budgetMonth)) {
+    console.log('Упс! Где-то закралась ошибка... Дальнейшее выполнение остановлено.');
+} else {
+    console.log('Бюджет на месяц: ', budgetMonth);
 
-//7/ Зная budgetMonth, посчитать за сколько месяцев будет
-// достигнута цель mission, вывести в консоль, округляя
-// в большую сторону
-
-// let
-
-///8) Поправить budgetDay учитывая бюджет на месяц,
-// а не месячный доход. Вывести в консоль
-// округлив в меньшую сторону (методы объекта Math в помощь)
-
-// let
+    console.log('Цель будет достигнута за: ${Math.ceil(mission / budgetMonth)} месяцев');
+}
 
 
-//Если budgetDay больше 800, то “Высокий уровень дохода”
-
-<<<<<<< Updated upstream
+// Задание
 // if budgetDay > 800
 //     else “Высокий уровень дохода”
 //
@@ -72,31 +65,35 @@ console.log(question2);
 // if budgetDay >0 “Что то пошло не так”
 //
 // //учесть варианты 0, 300 и 800
-//
-// if  = 0 =>
-// if = 300 =>
-// if = 800 =>
-=======
-if budgetDay > 800
-    else “Высокий уровень дохода”
 
-//Если budgetDay больше 300 и меньше 800,
-// то сообщение “Средний уровень дохода”
 
-if budgetDay <300 and <800 “Средний уровень дохода”
+let budgetDay = (budgetMonth / 30);
+console.log('Бюджет на день: ', Math.floor(budgetDay));
 
-//Если budgetDay больше 0 и меньше 300 то в консоль
-// вывести сообщение “Низкий уровень дохода”
+if (budgetDay === 800) {
+    console.log('Высокий уровень дохода')
+} else if (budgetDay === 300) {
+    console.log('Средний уровень дохода')
+} else if (budgetDay === 0) {
+    console.log('Низкий уровень дохода')
+} else if (budgetDay > 800) {
+    console.log('Очень высокий уровень дохода')
+} else if (budgetDay < 800 && budgetDay > 300) {
+    console.log('У вас средний уровень дохода');
+} else if (budgetDay < 0) {
+    console.log('Что то пошло не так');
+} else {
+    console.log('К сожалению у вас уровень дохода ниже среднего');
+}
 
-if budgetDay <0 and <300 “Низкий уровень дохода”
 
-//Если отрицательное значение то вывести “Что то пошло не так”
 
-if budgetDay >0 “Что то пошло не так”
-
-//учесть варианты 0, 300 и 800
-
-if  = 0 =>
-if = 300 =>
-if = 800 =>
->>>>>>> Stashed changes
+// вариант 2 (тернарный оператор)
+// console.log(isNaN(budgetDay) ? 'Упс! Где-то закралась ошибка...' :
+//     (budgetDay < 0) ? 'Что то пошло не так' :
+//         (budgetDay < 600) ? 'Что то пошло не так' :
+//             (budgetDay === 600) ? 'У вас почти средний уровень дохода, но немного не хватает...' :
+//                 (budgetDay < 1200) ? 'У вас средний уровень дохода' :
+//                     (budgetDay === 1200) ? 'У вас почти получилось попасть в группу с высокий уровень дохода! Постарайтесь лучше!' :
+//                         'У вас высокий уровень дохода');
+// }
