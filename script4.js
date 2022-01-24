@@ -15,4 +15,8 @@
 // doNum(3, 5, mult);
 // // console.log(a * b)
 
+let getExpensesMonth = ;
 
+let getAccumulatedMonth = ;
+
+let getTargetMonth = ;
