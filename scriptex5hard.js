@@ -10,8 +10,8 @@
 const arr = ['2516', '36582', '222', '684', '49455', '6958', '42988'];
 
 function array(arr, elem) {
-    for (let i = 2; i == arr.lenght;i++){
-        if (arr[i] === elem) {
+    for (let p = 2; p == arr.lenght;i++){
+        if (arr[p] === elem) {
 
         }
     }
@@ -25,11 +25,14 @@ function array(arr, elem) {
 // — Рядом с каждым числом написать оба делителя данного числа
 //
 //     Например: “Делители этого числа: 1 и n”
-
-for (let i = 1; i <= 100; i++) {
-    for (let j = 1; j < i; j++) {
-        if (i % j == 0) break;
-        console.log(j);
-    }
-    console.log(i)
+let n = 100;
+ isPrime: {
+    for (let i = 1; i * i <= n; i == 1 ? i++ : i += 2) if (n % i == 0) return false;
+    return n > 1;
 }
+
+const res = [...Array(41)].reduce((a, _, i) => a.concat(isPrime(i) ? `Делители числа ${i}: 1 и ${i}` : []) ,
+    []).join('\n');
+
+
+
