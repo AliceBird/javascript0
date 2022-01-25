@@ -1,22 +1,21 @@
 'use strict';
 
-let money,
-    income = 'freelance';
- addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Комуналка, бензин, еда..');
- deposit = confirm('Есть ли у вас депозит в банке?');
+let money;
+let income = 'freelance';
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Комуналка, бензин, еда..');
+let deposit = confirm('Есть ли у вас депозит в банке?');
 let mission = 100000;
 let period = 12;
 
 
 //1)  Переписать функцию  start с цикла while на do while
-let start
-do {
-    money = prompt('Ваш месячный доход?', 70000);
-    // console.log('money: ', money);
-} while (isNaN(money) || money === '' || money === null);
-
+let start = () => {
+    do {
+        money = prompt('Ваш месячный доход?', 70000);
+        // console.log('money: ', money);
+    } while (isNaN(money) || money === '' || money === null);
+};
 start();
-
 
 
 let expenses1,
@@ -36,17 +35,13 @@ showTypeof(deposit);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const getExpensesMonth = function () {
     let sum = 0;
-//while (isNaN(money) || money === '' || money === null);
-    while (let i = 0; i < 2; i++) {
-        expenses1 = prompt('Введите обязательную статью расходов?', 'Кварллата');
-    }
-       do {
-        isNaN(getExpensesMonth) || getExpensesMonth === '' || getExpensesMonth === null;
-
-        sum += +prompt('Во сколько это обойдется?', 3500)
-
-    }
-return sum;
+    expenses1 = prompt('Введите обязательную статью расходов?', 'Кварллата');
+    sum += +prompt('Во сколько это обойдется?', 3500);
+    do {
+        expenses2 = prompt('Введите обязательную статью расходов?', 'Бензин');
+    } while (expenses2 === '' || expenses2 === null);
+    sum += +prompt('Во сколько это обойдется?', 3500);
+    return sum;
 };
 let expensesAmount = getExpensesMonth();
 console.log('Расходы за месяц: ' + expensesAmount)
@@ -57,8 +52,8 @@ let getAccumulatedMonth = function () {
 
 // 3  Если getTargetMonth возвращает нам отрицательное значение,
 // то вместо “Цель будет достигнута” необходимо выводить “Цель не будет достигнута”
-let getTargetMouth = function () {
-    return mission / expensesAmount();
+let getTargetMounth = function () {
+    return mission / expensesAmount;
 };
 
 let getTargetMonth = (mission, budgetMonth) => {
@@ -66,14 +61,14 @@ let getTargetMonth = (mission, budgetMonth) => {
 };
 while (getTargetMonth < 0) {
     alert("Цель не будет достигнута ");
-};
+}
 
 console.log("Цель будет достигнута за " + Math.ceil(getTargetMounth()) + 'месяца');
 
 
 // 4) Если budgetDay отрицательное значение, то
 // вместо уровня дохода пусть выводится сообщение “Что то пошло не так”
-let budgetDay = getAccumulatedMonth / 30;
+let budgetDay = getAccumulatedMonth () / 30;
 
 
 let getStatusIncome = function () {
