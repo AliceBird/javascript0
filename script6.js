@@ -109,9 +109,31 @@ appData.expenses = appData.getExpensesMonth();
 //3 (перенести эти команды в этот метод)
 
 // appData.getAccumulatedMonth = 0;
-appData.getAccumulatedMonth = function () {
+// let getBudget = appData.getAccumulatedMonth;
 
-};
+//НАКОПЛЕНИЯ ЗА МЕСЯЦ/БЮДЖЕТ МЕСЯЦА?
+appData.getAccumulatedMonth = () => {
+       if (!appData.budget) {
+           appData.budget = 0;
+       }
+       return appData.budget - appData.expenses;
+   };
+
+
+let getBudget = appData.getAccumulatedMonth;
+console.log(getBudget (  'getBudget' + ' '));
+
+
+
+
+// console.log(appData.expenses ('getBudget' + ' '));
+// console.log(getBudget);
+// appData.getBudget = appData.getAccumulatedMonth;
+// console.log(appData.getBudget ('getBudget' + ' '));
+// appData.getBudget = appData.getAccumulatedMonth();
+// appData.budgetDay;
+// appData.budgetMonth;
+
 // appData.getBudget = getAccumulatedMonth();
 // getAccumulatedMonth = getBudget();
 
