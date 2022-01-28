@@ -81,9 +81,12 @@ appData.getExpensesMonth = function () {
     for (let i = 0; i < 2; i++) {
         if (i === 0) {
             expenses1 = prompt('ответ на первый вопрос:', 'ответ1');
+            console.log('expenses ' + 'ответ на первый вопрос:' + 'ответ на второй вопрос' );
+
         }
         if (i === 1) {
-            expenses2 = prompt('ответ на первый вопрос:', 'ответ1');
+            expenses2 = prompt('ответ на второй вопрос:', 'ответ1');
+            console.log('expenses ' + 'ответ на первый вопрос:' + 'ответ на второй вопрос' );
 
         }
         sum += +prompt('ответ на первый вопрос?', 123);
@@ -91,30 +94,9 @@ appData.getExpensesMonth = function () {
 
     return sum;
 };
-
-
-
-
-// console.log(addExpenses.toLocaleLowerCase().split(','));
-//Функция возвращает сумму всех расходов за месяц
-// const getExpensesMonth = function () {
-//     let sum = 0;
+appData.expenses = appData.getExpensesMonth;
+console.log(appData.expenses ('expenses' + ' '));
 //
-//     for (let i = 0; i < 2; i++) {
-//         if (i === 0) {
-//             expenses1 = prompt('Введите обязательную статью расходов?', 'Кварллата');
-//         }
-//         if (i === 1) {
-//             expenses2 = prompt('Введите обязательную статью расходов?', 'Бензин');
-//
-//         }
-//         sum += +prompt('Во сколько это обойдется?', 3500);
-//     }
-//
-//     return sum;
-// };
-
-
 //7) Метод getExpensesMonth(Функция возвращает сумму всех расходов за месяц)
 // будет считать сумму всех обязательных расходов
 // и сохранять результат в свойство expensesMonth!!!!
@@ -134,7 +116,7 @@ appData.expenses = appData.getExpensesMonth();
 appData.getAccumulatedMonth = function (getBudjet) {
 
 };
-getAccumulatedMonth = getBudget();
+// getAccumulatedMonth = getBudget();
 
 //9) Вызвать все необходимые методы, чтобы корректно считались все данные. В консоль вывести:
 // — Расходы за месяц - getExpensesMonth
@@ -168,9 +150,9 @@ appData.getStatusIncome = function () {
 
 // 10) Используя цикл for in для объекта (appData), вывести в консоль сообщение
 // "Наша программа включает в себя данные: " (вывести весь appData)
-for (let key in appData){
-    console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
-};
+// for (let key in appData){
+//     console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
+// };
 
 // console.log(Object.keys(appData).length);
 
