@@ -56,6 +56,7 @@ appData.expensesMonth = appData.key;
 appData.budgetDay = 0;
 appData.budgetMonth = 0;
 appData.expensesMonth = 0;
+appData.getAccumulatedMonth = 0;
 console.log(appData)
 //4) Функции getExpensesMonth, getAccumulatedMonth, getTargetMonth,
 // getStatusIncome - сделать методами объекта AppData
@@ -74,7 +75,6 @@ console.log(appData)
 //     “ответ на первый вопрос” : “ответ на второй вопрос”
 //     }
 //
-
 appData.getExpensesMonth = function () {
     let sum = 0;
 
@@ -91,37 +91,14 @@ appData.getExpensesMonth = function () {
 
     return sum;
 };
-
-
-
-
-// console.log(addExpenses.toLocaleLowerCase().split(','));
-//Функция возвращает сумму всех расходов за месяц
-// const getExpensesMonth = function () {
-//     let sum = 0;
-//
-//     for (let i = 0; i < 2; i++) {
-//         if (i === 0) {
-//             expenses1 = prompt('Введите обязательную статью расходов?', 'Кварллата');
-//         }
-//         if (i === 1) {
-//             expenses2 = prompt('Введите обязательную статью расходов?', 'Бензин');
-//
-//         }
-//         sum += +prompt('Во сколько это обойдется?', 3500);
-//     }
-//
-//     return sum;
-// };
-
-
+appData.expenses = appData.getExpensesMonth();
 //7) Метод getExpensesMonth(Функция возвращает сумму всех расходов за месяц)
 // будет считать сумму всех обязательных расходов
 // и сохранять результат в свойство expensesMonth!!!!
 // для того, чтобы посчитать сумму используйте цикл for in
 
 // appData.getExpensesMonth = appData.expenses();
-appData.expenses = appData.getExpensesMonth();
+// appData.expenses = appData.getExpensesMonth();
 // console.log(appData.expenses('ответ на первый вопрос: ответ на второй вопрос' , ' ' ));
 
 
@@ -130,11 +107,16 @@ appData.expenses = appData.getExpensesMonth();
 // переименовать в getBudget.
 // Этот метод будет считать budgetMonth и budgetDay
 // (перенести эти команды в этот метод)
+//План:
+//1 переименовать getAccumulatedMonth в getBudget
+//2,1 посчитать budgetMonth
+//2.2 посчитать budgetDay
+//3 вывести
 
-appData.getAccumulatedMonth = function (getBudjet) {
+appData.getAccumulatedMonth = function () {
 
 };
-getAccumulatedMonth = getBudget();
+// getAccumulatedMonth = getBudget;
 
 //9) Вызвать все необходимые методы, чтобы корректно считались все данные. В консоль вывести:
 // — Расходы за месяц - getExpensesMonth
@@ -157,20 +139,20 @@ getAccumulatedMonth = getBudget();
 // // };
 // //
 // // console.log(getStatusIncome());
-appData.getTargetMonth = function () {
-
-};
-
-appData.getStatusIncome = function () {
-
-};
+// appData.getTargetMonth = function () {
+//
+// };
+//
+// appData.getStatusIncome = function () {
+//
+// };
 
 
 // 10) Используя цикл for in для объекта (appData), вывести в консоль сообщение
 // "Наша программа включает в себя данные: " (вывести весь appData)
-for (let key in appData){
-    console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
-};
+// for (let key in appData){
+//     console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
+// };
 
 // console.log(Object.keys(appData).length);
 
