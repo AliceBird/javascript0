@@ -73,8 +73,6 @@ console.log(appData)
 //     “ответ на первый вопрос” : “ответ на второй вопрос”,
 //     “ответ на первый вопрос” : “ответ на второй вопрос”
 //     }
-//
-
 appData.getExpensesMonth = function () {
     let sum = 0;
 
@@ -91,43 +89,42 @@ appData.getExpensesMonth = function () {
         }
         sum += +prompt('ответ на первый вопрос?', 123);
     }
-
     return sum;
 };
 appData.expenses = appData.getExpensesMonth;
 console.log(appData.expenses ('expenses' + ' '));
+appData.expenses = appData.getExpensesMonth();
+
 //
 //7) Метод getExpensesMonth(Функция возвращает сумму всех расходов за месяц)
 // будет считать сумму всех обязательных расходов
 // и сохранять результат в свойство expensesMonth!!!!
 // для того, чтобы посчитать сумму используйте цикл for in
 
-// appData.getExpensesMonth = appData.expenses();
-appData.expenses = appData.getExpensesMonth();
-// console.log(appData.expenses('ответ на первый вопрос: ответ на второй вопрос' , ' ' ));
-
-
 
 //8) getAccumulatedMonth(Функция возвращает Накопления за месяц (Доходы минус расходы))
-// переименовать в getBudget.
-// Этот метод будет считать budgetMonth и budgetDay
-// (перенести эти команды в этот метод)
+//To do list
+//1 переименовать в getBudget.
+//2 Этот метод будет считать budgetMonth и budgetDay
+//3 (перенести эти команды в этот метод)
 
-appData.getAccumulatedMonth = function (getBudjet) {
+// appData.getAccumulatedMonth = 0;
+appData.getAccumulatedMonth = function () {
 
 };
+// appData.getBudget = getAccumulatedMonth();
 // getAccumulatedMonth = getBudget();
 
 //9) Вызвать все необходимые методы, чтобы корректно считались все данные. В консоль вывести:
-// — Расходы за месяц - getExpensesMonth
-// — За какой период будет достигнута цель (в месяцах) - getTargetMonth
+//1 — Расходы за месяц - getExpensesMonth
+//2 — За какой период будет достигнута цель (в месяцах) - getTargetMonth
 //// let budgetDay = getAccumulatedMonth / 30;
 //
 // //
 // // console.log("Цель будет достигнута за " + Math.ceil(getTargetMounth()) + 'месяца');
 // //
 
-// — Уровень дохода - //
+//3— Уровень дохода - //
 // // let getStatusIncome = function () {
 // //     if (budgetDay < 300) {
 // //         return ('Низкий уровень дохода');
