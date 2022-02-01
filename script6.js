@@ -51,7 +51,7 @@ appData.asking();
 // свойство budget которое будет принимать значение money
 appData.budget = money;
 // appData.expenses = appData.getExpensesMonth;
-appData.expensesMonth = appData.key;
+// appData.expensesMonth = appData.key;
 
 //3) В объект appData добавить свойства  budgetDay, budgetMonth
 // и expensesMonth, изначально равные нулю
@@ -106,11 +106,12 @@ appData.expenses = appData.getExpensesMonth();
 // для того, чтобы посчитать сумму используйте цикл for in
 
 appData.getExpensesMonth = function () {
-     for (let key in appData.expenses){
+    for (let key in appData.expenses) {
         appData.expensesMonth += +appData.expenses[key];
-}
-   appData.expensesMonth();
+    }
+    // appData.expensesMonth();
 };
+appData.getExpensesMonth();
 console.log(appData.expensesMonth);
 
 // appData.getBudget();
@@ -124,24 +125,30 @@ console.log(appData.expensesMonth);
 //2 Этот метод будет считать budgetMonth и budgetDay
 //3 (перенести эти команды в этот метод)
 
-appData.getAccumulatedMonth = 0;
-// let getBudget = appData.getAccumulatedMonth;
-
+/// let getBudget = appData.getAccumulatedMonth;
+//console.log('Расходы за месяц: ',getExpensesMonth)
+//Функция возвращает Накопления за месяц (Доходы минус расходы)
+// let getAccumulatedMonth = function () {
+//     return money - expensesAmount()
+// };
+//
 //НАКОПЛЕНИЯ ЗА МЕСЯЦ/БЮДЖЕТ МЕСЯЦА?
 appData.getAccumulatedMonth = function () {
     if (!appData.budget) {
         appData.budget = 0;
     }
-    return appData.budget - appData.expenses;
+    return appData.budget - appData.expensesMonth;
 };
 let getBudget = appData.getAccumulatedMonth();
 console.log(getBudget);
+
 // let getBudget = appData.getAccumulatedMonth();
 // console.log(getBudget);
 //('getBudget' + ' ')
-appData.budgetDay = appData.getAccumulatedMonth() / 30;
 
-appData.budgetMonth = getBudget();
+appData.budgetDay = appData.getAccumulatedMonth() / 30;
+console.log(appData.budgetDay);
+// appData.budgetMonth = getBudget();
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -162,12 +169,22 @@ appData.budgetMonth = getBudget();
 //1 — Расходы за месяц - getExpensesMonth
 //2 — За какой период будет достигнута цель (в месяцах) - getTargetMonth
 //// let budgetDay = getAccumulatedMonth / 30;
+// appData.getTargetMonth = function () {
+// mission/getBudget
 //
-// //
+// };
+// // //
 //
-// // console.log("Цель будет достигнута за " + Math.ceil(getTargetMounth()) + 'месяца');
-// //
 
+const getTargetMonth = () => {
+    return Math.ceil(appData.mission / getBudget);
+};
+console.log(getTargetMonth());
+// console.log("Цель будет достигнута за " + Math.ceil(getTargetMounth()) + 'месяца');
+// //
+//appData.getStatusIncome = function () {
+//
+// };
 //3— Уровень дохода - //
 // // let getStatusIncome = function () {
 // //     if (budgetDay < 300) {
@@ -180,57 +197,18 @@ appData.budgetMonth = getBudget();
 // // };
 // //
 // // console.log(getStatusIncome());
-appData.getTargetMonth = function () {
-
-};
-
-appData.getStatusIncome = function () {
-
-};
+// appData.getTargetMonth = function () {
+//
+// };
 
 
 // 10) Используя цикл for in для объекта (appData), вывести в консоль сообщение
 // "Наша программа включает в себя данные: " (вывести весь appData)
-// for (let key in appData){
-//     console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
-// };
+for (let key in appData) {
+    console.log('Наша программа включает в себя данные: ' + key + ' Значение: ' + appData[key]);
+};
 
-// console.log(Object.keys(appData).length);
-
-// let expensesAmount = getExpensesMonth();
-// console.log('Расходы за месяц: ' + expensesAmount)
-
-//console.log('Расходы за месяц: ',getExpensesMonth)
-//Функция возвращает Накопления за месяц (Доходы минус расходы)
-// let getAccumulatedMonth = function () {
-//     return money - expensesAmount()
-// };
-//
-// let getTargetMouth = function () {
-//     return appData.mission / expensesAmount();
-// };
+console.log(Object.keys(appData).length);
 
 
-//Подсчитывает за какой период будет достигнута цель,
-// зная результат месячного накопления и возвращает результат
-// const getTargetMonth = (Mymiss, budgetMonth) => {
-//     return Math.ceil(Mymiss / budgetMonth);
-// };
-//
-// let budgetDay = getAccumulatedMonth / 30;
-
-//
-// console.log("Цель будет достигнута за " + Math.ceil(getTargetMounth()) + 'месяца');
-//
-// let getStatusIncome = function () {
-//     if (budgetDay < 300) {
-//         return ('Низкий уровень дохода');
-//     } else if (budgetDay <= 800) {
-//         return ('Средний уровень дохода');
-//     } else if (budgetDay > 800) {
-//         return ('Высокий уровень дохода');
-//     }
-// };
-//
-// console.log(getStatusIncome());
 
