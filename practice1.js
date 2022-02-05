@@ -27,37 +27,67 @@ let appData = {
     moneyDeposit: 0,
     mission: 5000000,
     period: 10,
+    /** функция опроса */
     asking: function () {
-        {
-            if (confirm('Есть ли у вас дополнительный заработок?')) {
-                let itemIncome = prompt('Какой у вас дополнительый заработок?', 'таксую');
-
-                while (isString(itemIncome) || (itemIncome) === '' || (itemIncome) === null) {
-                    itemIncome = prompt('Какой у вас дополнительый заработок?', 'массаж');
-                    console.log('cashIncome: ', cashIncome);
-                    // console.log();
-                }
-            };
-            if (confirm('Сколько в месяц вы на этом зарабатываете?')) {
-                let cashIncome = prompt('Сколько в месяц вы на этом зарабатываете?', '20 000');
-
-                while ((isNaN(cashIncome) || (cashIncome) === '' || (cashIncome) === null) {
-                    money = prompt('Ваш месячный доход?', 70000);
-                    console.log('cashIncome: ', cashIncome);
-                    // console.log();
-                    // appData.income[itemIncome] = cashIncome;
-                    // console.log(cashIncome);
-                }
-            };
-            appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Комуналка, бензин, еда..');
-            console.log(appData.addExpenses);
-            appData.addExpenses = appData.addExpenses.toUpperCase().split(',', ' ');
-            appData.deposit = confirm('Есть ли у вас депозит в банке?');
-
+        function checkIsString(str) {
+            return (typeof (str) === 'string' || str instanceof String)
         }
 
+        if (confirm('Есть ли у вас дополнительный заработок?')) {
+            let itemIncome;
+            do {
+                itemIncome = prompt('Какой у вас дополнительый заработок?', 'массаж');
+            }
+            while (itemIncome === '' || itemIncome === null || !checkIsString(itemIncome))
+
+            let cashIncome;
+            do {
+                cashIncome = prompt('Сколько в месяц вы на этом зарабатываете?', '20000');
+            } while (isNaN(cashIncome) || cashIncome === '' || cashIncome === null)
+
+            appData.addIncome.push({itemIncome: itemIncome, cashIncome: cashIncome});
+        }
+        //
+        // if (confirm('Есть ли у вас дополнительный заработок?')) {
+        //     let itemIncome = prompt('Какой у вас дополнительый заработок?', 'таксую');
+        //
+        //     if (typeof (itemIncome) === 'string' || itemIncome instanceof String) {
+        //         return true;
+        //     }
+        // } else {
+        //     return false;
+        // }
+        // if (confirm('Сколько в месяц вы на этом зарабатываете?')) {
+        //     let cashIncome = prompt('Сколько в месяц вы на этом зарабатываете?', '20 000');
+        //
+        //     while (isNaN(cashIncome) || cashIncome === '' || cashIncome === null) {
+        //         cashIncome = prompt('Ваш месячный доход?', 70000);
+        //     }
+        //     appData.addIncome = cashIncome;
+        appData.addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Комуналка, бензин, еда..');
+        console.log(appData.addExpenses);
+
+        const toUpperCaseFirstLetter = (word) => {
+            let newWord = toUpperCaseFirstLetter[0];
+            return newWord().toLocaleUpperCase(newWord);
+
+                // .toLocaleUpperCase();
+            // newWord();
+            //**
+            // создать переменную newWord
+            // присвоить значение word
+            // обратиться к 0 символу newWord посредсвам [0]
+            // для данного символа вызвать toUpperCase
+            //вернуть newWord
+            // */
+        }
+
+        console.log(toUpperCaseFirstLetter);
+        appData.addExpenses = appData.addExpenses.toUpperCase().split(',', ' ');
+
+        appData.deposit = confirm('Есть ли у вас депозит в банке?');
     }
-};
+}
 
 let expenses1,
     expenses2;
