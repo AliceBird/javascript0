@@ -1,40 +1,36 @@
 'use strict'
 
-
-// let collect = document.getElementsByClassName('._blank');
-
-
 //** Убрать рекламу */))))))))))))))))))))))))))))))))))))))))))))
 let myAdv = document.querySelector('.adv');
 // console.log(myAdv);
 myAdv.classList.remove('adv');
-console.log(myAdv.classList);
+// console.log(myAdv.classList);
 
 //*Восстановить порядок книг.
-//
+let collect = document.querySelectorAll('.book');
+let elemUl = document.querySelectorAll('ul'),
+    elemLi = document.querySelectorAll('li')
+console.log(document.querySelectorAll('li'));
+console.log(collect);
+collect[0].insertBefore(elem[0], elem[2]);
+
 // Заменить картинку заднего фона на другую из папки image
-// let image = document.getElementsByTagName('.body');
-// // // // //image.
-// // // // // or
-// // image.classlist.add(url('you-dont-know-js.jpg'));
-// // // // // document.body.style.background = "url('you-dont-know-js.jpg')"
-// console.log(image);
+let image = document.querySelector('body');
+image.setAttribute('style', 'background-image: url(./image/you-dont-know-js.jpg)');
+
+
+
 
 // Исправить заголовок в книге 3( Получится - "Книга 3. this и Прототипы Объектов")//
-// let myElem = 1;
-// let myElem.title = 'Книга 3. this и Прототипы Объектов';
-// console.log(myElem.title);
-// console.log(collect_2);
-// collect_2.title = 'Книга 3. this и ПроТОТИпы Объектов';
-//замена h2 в первом h2((((((
-let collect_2 = document.querySelector('h2').textContent = 'Книга 3. this и ПроТОТИпы Объектов';
-// let collect_2 = document.querySelectorAll('h2').innerHTML = 'Книга 3. this и ПроТОТИпы Объектов';
-// collect_2[4].title = 123;
-console.log(collect_2);
+// let myElem = document.querySelectorAll('h2')[2].innerHTML = '<a href="https://github.com/azat-io/you-dont-know-js-ru/blob/master/this%20%26%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes"\n' +
+//     '               target="_blank">Книга 3. this и ПроТОТипы Объектов</a>';
+// console.log(myElem);
+
 
 // Восстановить порядок глав во второй и пятой книге
-// let book = document.querySelectorAll('.book');
+// let book = document.querySelectorAll('.books');
 // console.log(book);
+// book[1].removeChild(book[2]);
 // let elemRep = book[0].replaceChild(book[4], book[2] );
 // console.log(elemRep);
 // // в шестой книге добавить главу “Глава 8: За пределами ES6”
