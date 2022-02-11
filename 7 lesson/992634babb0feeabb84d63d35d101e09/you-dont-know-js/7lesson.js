@@ -23,6 +23,7 @@ let elemUl = document.querySelectorAll('ul'),//elemUl = document.querySelectorAl
     elemH2 = document.querySelectorAll('h2');
 
 console.log(document.querySelectorAll('li'));
+
 //Восстановить порядок книг.
 collect[0].insertBefore(elem[0], elem[2]); // transport null and first elements.
 collect[0].insertBefore(elem[2], elem[6]); // transport second and last elements.
