@@ -1,3 +1,4 @@
+'use strict';
 alert("Привет. Мир!");
 
 let money = 158;
@@ -15,3 +16,11 @@ console.log(period);
 
 let text = "Text about anything";
 console.log(text)
+
+let btn = document.getElementById('start');
+console.log(btn);
+
+let tag1 = document.getElementsByTagName('.data .btn_plus');
+let tag2 = document.getElementsByTagName();
+console.log(tag1);
+
