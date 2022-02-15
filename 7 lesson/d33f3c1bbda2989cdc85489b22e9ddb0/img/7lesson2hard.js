@@ -1,5 +1,5 @@
 'use strict';
-alert("Привет. Мир!");
+// alert("Привет. Мир!");
 
 let money = 158;
 console.log(money);
@@ -17,10 +17,17 @@ console.log(period);
 let text = "Text about anything";
 console.log(text)
 
+//Получить кнопку "Рассчитать" через id
 let btn = document.getElementById('start');
 console.log(btn);
 
+//Получить кнопки “+” (плюс) через Tag, каждую в своей переменной.
 let tag1 = document.getElementsByTagName('.data .btn_plus');
-let tag2 = document.getElementsByTagName();
+let tag2 = document.getElementsByTagName('btn_plus expenses_add');
 console.log(tag1);
+console.log(tag2);
+
+//получить чекбокс по id через querySelector
+let checkBox = querySelector('#deposit\\check');
+console.log(checkBox);
 
