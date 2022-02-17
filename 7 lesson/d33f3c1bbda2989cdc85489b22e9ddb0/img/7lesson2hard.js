@@ -22,78 +22,58 @@ let btn = document.getElementById('.start');
 console.log(btn);
 
 //Получить кнопки “+” (плюс) через Tag, каждую в своей переменной.
-let tag1 = document.getElementsByTagName('.data .btn_plus');
-let tag2 = document.getElementsByTagName('btn_plus expenses_add');
-console.log(tag1);
-console.log(tag2);
+let tag1 = document.querySelectorAll('button')[0];
+let tag2 = document.querySelectorAll('button')[1];
 
 //получить чекбокс по id через querySelector
-let checkBox = document.querySelector('#deposit\\check');
+let checkBox = document.querySelector('#start');
 console.log(checkBox);
 
 //Получить поля для ввода возможных доходов (additional_income-item)
 // при помощи querySelectorAll
-let additionalIncomeItem = document.querySelectorAll('.additional_income-item');
-console.log(additionalIncomeItem);
+let additionalIncomeItem1 = document.querySelectorAll('.additional_income-item')[0];
+let additionalIncomeItem2 = document.querySelectorAll('.additional_income-item')[1];
+console.log(additionalIncomeItem1, additionalIncomeItem2);
 
 //Получить все блоки в правой части программы через классы
 // (которые имеют класс название-value,
 // начиная с class="budget_day-value" и
 // заканчивая class="target_month-value">)
 
-let target_month = document.querySelectorAll('.value');
-console.log(target_month);
 
-// let income_period = document.querySelectorAll('.additional_income-item');
-// console.log(income_period);
-//
-// let additional_expenses = document.querySelectorAll('.additional_income-item');
-// console.log(additional_expenses);
-//
-// let additional_income = document.querySelectorAll('.additional_income-item');
-// console.log(additional_income);
-//
-//
-// let expenses_month = document.querySelectorAll('.additional_income-item');
-// console.log(expenses_month);
-//
-// let budget_day = document.querySelectorAll('.additional_income-item');
-// console.log(budget_day);
-//
-// let budget_month = document.querySelectorAll('.additional_income-item');
-// console.log(budget_month);
+
+let targetMonthValue = document.querySelector('target_month-value');
+console.log(targetMonthValue);
+
+let incomePeriodValue = document.querySelector('income_period-value');
+console.log(incomePeriodValue);
+
+let additionalExpensesValue = document.querySelector('additional_expenses-value');
+console.log(additionalExpensesValue);
+
+
+let additionalIncomeValue = document.querySelector('additional_income-value');
+console.log(additionalIncomeValue);
+
+let expensesMonthValue = document.querySelector('expenses_month-value');
+console.log(expensesMonthValue);
+
+let budgetDayValue = document.querySelector('budget_day-value');
+console.log(budgetDayValue);
+
+let budgetMonthValue = document.querySelector('budget_month-value');
+console.log( budgetMonthValue);
 
 //Получить оставшиеся поля через querySelector каждый в отдельную переменную
 // (Инпуты с левой стороны не забудьте про range)
-let periodSelect = document.querySelectorAll('period-select');
-console.log();
+let periodSelect = document.querySelector('period-select');
+console.log(periodSelect);
 
 let targetAmount = document.querySelectorAll('target-amount');
 console.log(targetAmount);
 
-let depositPercent = document.querySelectorAll('deposit-percent');
-console.log(depositPercent);
+let depositCheck = document.querySelector('deposit-check');
+console.log(depositCheck);
 
-let depositAmount = document.querySelectorAll('deposit-amount');
-console.log(depositAmount);
 
-let additionalExpensesTitle = document.querySelectorAll('additional_expenses-title');
-console.log(additionalExpensesTitle);
 
-let expensesAmount = document.querySelectorAll('expenses-amount');
-console.log(expensesAmount);
-
-let expensesTitle = document.querySelectorAll('expenses-title');
-console.log(expensesTitle);
-
-let addiIncomeItem = document.querySelectorAll('additional_income-item');
-console.log(addiIncomeItem);
-
-let incomeAmount = document.querySelectorAll('income-amount');
-console.log(incomeAmount);
-
-let incomeTitle = document.querySelectorAll('income-title');
-console.log(incomeTitle);
-
-let salaryAmount = document.querySelectorAll('salary-amount');
-console.log(salaryAmount);
